@@ -11,8 +11,8 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
-import com.ousiarche.todo.frame.BottomSheet
-import com.ousiarche.todo.frame.FloatingButton
+import com.ousiarche.todo.fragment.BottomSheet
+import com.ousiarche.todo.fragment.FloatingButton
 import com.ousiarche.todo.ui.theme.TodoTheme
 import kotlinx.coroutines.launch
 
@@ -37,7 +37,10 @@ class MainActivity : ComponentActivity() {
                             if (sheetState.isVisible) {
                                 BottomSheet(
                                     sheetState = sheetState,
-                                    onDismissRequest = { scope.launch { sheetState.hide() } },
+                                    scope = scope,
+                                    onDismissRequest = {
+//                                        scope.launch { sheetState.hide() }
+                                    },
                                 )
                             }
                         }
