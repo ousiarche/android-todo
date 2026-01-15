@@ -1,4 +1,4 @@
-package com.ousiarche.todo.content
+package com.ousiarche.todo.todo.model
 
 import android.content.Context
 import androidx.room.Database

@@ -1,4 +1,4 @@
-package com.ousiarche.todo.fragment
+package com.ousiarche.todo.todo.view.fragment
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add

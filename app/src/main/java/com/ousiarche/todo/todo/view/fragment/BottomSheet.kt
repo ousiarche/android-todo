@@ -1,4 +1,4 @@
-package com.ousiarche.todo.fragment
+package com.ousiarche.todo.todo.view.fragment
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -13,13 +13,13 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import kotlinx.coroutines.CoroutineScope
+import com.ousiarche.todo.todo.viewmodel.MainViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BottomSheet(
     sheetState: SheetState,
-    scope: CoroutineScope,
+    viewModel: MainViewModel,
     onDismissRequest: () -> Unit,
     ) {
         ModalBottomSheet(
@@ -31,13 +31,12 @@ fun BottomSheet(
                 modifier = Modifier
                     .padding(20.dp, 0.dp)
             ) {
-                val content: String = ""
+                val content = ""
                 var text by remember { mutableStateOf(content) }
                 BottomSheetTextField(text, { text = it })
                 AddingButton(modifier = Modifier.align(Alignment.End),
                     text = text,
-                    scope = scope,
-                    sheetState = sheetState)
+                    viewModel = viewModel)
             }
     }
 }
